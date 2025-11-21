@@ -12,16 +12,20 @@ body {
   background-color: white;
   padding: 40px 30px;
   border-radius: 15px;
-  width: 650px;
-  max-width: 90%;
-  box-shadow: 0 0 25px rgba(0,0,0,0.2);
+  width: 90%;
+  max-width: 650px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
-h2, h3 { color: #333; }
+h2,
+h3 {
+  color: #333;
+}
 
-input[type="text"], input[type="datetime-local"] {
-  width: 80%;
+input[type="text"],
+input[type="datetime-local"] {
+  width: 100%;
   padding: 10px;
   margin: 10px 0;
   border-radius: 5px;
@@ -29,7 +33,7 @@ input[type="text"], input[type="datetime-local"] {
 }
 
 button {
-  width: 50%;
+  width: 100%;
   padding: 10px;
   margin-top: 10px;
   border: none;
@@ -39,30 +43,44 @@ button {
   font-weight: bold;
   cursor: pointer;
 }
-button:hover { background-color: #1976d2; }
 
-button.complete { background-color: #4caf50; }
-button.delete { background-color: #f44336; }
-button.edit { background-color: #2196f3; }
+button:hover {
+  background-color: #1976d2;
+}
+
+button.complete {
+  background-color: #4caf50;
+}
+
+button.delete {
+  background-color: #f44336;
+}
+
+button.edit {
+  background-color: #2196f3;
+}
 
 .tasks-box {
   background-color: white;
   margin-top: 20px;
-  padding: 20px;
+  width: 100%;
+  padding: 15px;
   border-radius: 10px;
   text-align: left;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .task {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  /* Mobile-friendly */
   align-items: center;
-  padding: 12px 15px;
+  padding: 15px;
   margin-bottom: 12px;
   border: 1px solid #eee;
   border-radius: 8px;
   background-color: #f9f9f9;
+  gap: 10px;
 }
 
 .task-info {
@@ -73,7 +91,14 @@ button.edit { background-color: #2196f3; }
 
 .task-buttons {
   display: flex;
-  gap: 5px;
+  width: 100%;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.task-buttons button {
+  flex: 1;
+  /* Auto width */
 }
 
 .task-title {
@@ -128,4 +153,23 @@ button.edit { background-color: #2196f3; }
   padding: 3px 8px;
   border-radius: 5px;
   font-size: 12px;
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .task-title {
+    font-size: 15px;
+  }
+
+  button {
+    padding: 12px;
+    font-size: 15px;
+  }
 }
