@@ -170,3 +170,14 @@ button.delete:hover { background-color: #d32f2f; }
   button { padding: 10px; font-size: 14px; }
   .tasks-box { padding: 12px; }
 }
+
+.modal-content input[type="datetime-local"] {
+  width: 100% !important;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.modal-content {
+  max-width: 400px;
+  width: 100%;
+}
